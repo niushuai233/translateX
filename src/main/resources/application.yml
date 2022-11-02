@@ -1,0 +1,4 @@
+server:
+  port: 30020
+  servlet:
+    context-path: /translatex
