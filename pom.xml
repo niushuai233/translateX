@@ -110,13 +110,15 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <verbose>false</verbose>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                    <prefix>git</prefix>
+                    <dateFormat>yyyy-MM-dd HH:mm:ss</dateFormat>
+                    <dateFormatTimeZone>${user.timezone}</dateFormatTimeZone>
                     <generateGitPropertiesFile>true</generateGitPropertiesFile>
                     <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
-                    <includeOnlyProperties>
-                        <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
-                        <includeOnlyProperty>^git.commit.id.(abbrev|full)$</includeOnlyProperty>
-                    </includeOnlyProperties>
                     <commitIdGenerationMode>full</commitIdGenerationMode>
+                    <format>properties</format>
                 </configuration>
             </plugin>
         </plugins>
